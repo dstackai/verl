@@ -73,27 +73,23 @@ TBD
 
 dstack
 ------
-If you want to run multi-node training with `dstack <https://dstack.ai/>`_ on NVIDIA Cluster, you need to follow the following steps.
+`dstack <https://github.com/dstackai/dstack>`_  simplifies distributed-training by providing streamlined alternative to K8s/Slurm.
+To run multi-node training jobs with dstack , you need to follow the following steps.
 
 1. Prerequisite
 
-   Once dstack is `installed <https://dstack.ai/docs/installation/>`_, go ahead clone the repo, and run dstack init. 
+   Once dstack is `installed <https://dstack.ai/docs/installation/>`_, initialize the directory as a repo with ``dstack init``. 
 
    .. code-block:: bash
 
-       $ git clone https://github.com/dstackai/dstack
-       $ cd dstack
+       $ mkdir dstack_task && cd dstack_task
        $ dstack init
 
 2. Create fleet
    
-   Before submitting distributed training runs, make sure to create a fleet
-   with a ``placement`` set to ``cluster``.
+   Before submitting distributed training jobs, make sure to create a `fleet <https://dstack.ai/docs/concepts/fleets/>`_.
+   dstack supports various cloud providers through ``cloud fleets`` and on-prem servers through ``SSH fleets``.
 
-   .. note::
-
-       For more details on how to use clusters with ``dstack``, check the
-       `Clusters <https://dstack.ai/docs/guides/clusters>`_ guide.
 
 3. Run a Ray cluster
 
@@ -183,6 +179,8 @@ If you want to run multi-node training with `dstack <https://dstack.ai/>`_ on NV
             trainer.test_freq=10 \
             trainer.total_epochs=15 2>&1 | tee verl_demo.log \
             trainer.resume_mode=disable
+
+For more details on how to use ``dstack``, check the `dstack documentation <https://dstack.ai/docs/>`_.
 
 How to debug?
 ---------------------
