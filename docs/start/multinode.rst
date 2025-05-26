@@ -144,7 +144,7 @@ As long as the `dstack apply` is attached, you can use `localhost:8265` to submi
 Submit Ray jobs
 ~~~~~~~~~~~~~~~
 
-Before you can submit Ray jobs, ensure to install `ray`` locally:
+Before you can submit Ray jobs, ensure to install `ray` locally:
    
 .. code-block:: shell
 
